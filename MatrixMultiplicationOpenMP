@@ -51,22 +51,7 @@ int main() {
     multiplyMatrices(A, B, C, N);
     double endTime = omp_get_wtime();
 
-    // Output the result to a file
-    ofstream outputFile("matrix_multiplication_result.txt");
-    if (outputFile.is_open()) {
-        outputFile << "Matrix A:\n";
-        printMatrix(A, N);
-        outputFile << "\nMatrix B:\n";
-        printMatrix(B, N);
-        outputFile << "\nMatrix C (Result of A * B):\n";
-        printMatrix(C, N);
-        outputFile.close();
-        cout << "Matrix multiplication result has been written to matrix_multiplication_result.txt\n";
-        cout << "Time taken for multiplication: " << (endTime - startTime) << " seconds" << endl;
-    } else {
-        cerr << "Unable to open file for writing.\n";
-        return 1;
-    }
+  
 
     return 0;
 }
